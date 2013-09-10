@@ -47,6 +47,11 @@ body {
     text-shadow: none;
 }
 
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
 hr {
     display: block;
     height: 1px;
@@ -78,14 +83,14 @@ textarea {
 }
 
 
-/* ===== Initializr Styles ==================================================
-   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
+/* ===== Designspeaks Styles ==================================================
+   Author: Andrew Tibbs — http://andrewtibbs.org
    ========================================================================== */
 
 body {
     @extend %didot;
     font-size: 16px;
-    line-height: 1.3em;
+    line-height: 21px;
 }
 
 .wrapper {
@@ -95,6 +100,246 @@ body {
 
 a {
     color: $link-color;
+    &:hover {
+        color: darken($link-color, 10%);
+    }
+}
+
+.title {
+    color: $logo-color;
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 105px;
+    letter-spacing: 2px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.section-title {
+    text-align: center;
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+    padding: 9px 0px;
+    font-size: 1em;
+    @extend %abel;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+    color: $base-color;
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        width: 200px;
+        left: 50%;
+        margin-left: -100px;
+        background: $title-bg-color;
+        background: rgba(255,242,204, .77);
+        display: block;
+        padding: 20px 0px;
+        -webkit-transform: skew(20deg); 
+       -moz-transform: skew(20deg); 
+       -o-transform: skew(20deg);
+       transform: skew(20deg);
+    }
+}
+
+a.button {
+    color: white;
+    background: $link-color;
+    @extend %didot;
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 1em;
+    padding: 13px 30px 10px;
+    text-decoration: none;
+    margin-top: 20px;
+    display: block;
+    float: left;
+    line-height: 1em;
+    &:hover {
+        background: darken($link-color, 10%);
+    }
+}
+
+.top-btn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+nav {
+    ul {
+        list-style: none;
+        text-align: center;
+        padding: 0;
+        li {
+            display: inline-block;
+            padding: 0 25px;
+            font-size: 1em;
+            @extend %abel;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            a {
+                text-decoration: none;
+                color: $base-color;
+            }
+        }
+    }
+}
+.hero-image {
+    display: block;
+    margin: 0 auto;
+}
+
+/* SECTION: Upcoming */
+#upcoming {
+    margin-top: 80px;
+    padding: 30px 0;
+    background: white;
+    .section-title {
+        margin-top: -50px;
+    }
+    h1 {
+        text-transform: uppercase;
+        font-style: italic;
+        @extend %didot;
+        font-size: 50px;
+        letter-spacing: 2px;
+        text-align: center;
+        margin-bottom: 5px;
+        line-height: 1em;
+        + p {
+            text-align: center;
+        }
+    }
+    aside {
+
+        .date, .time {
+            @extend %abel;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1em;
+            margin: 0;
+        }
+        address {
+            margin-top: 20px;
+            font-style: italic;
+            font-size: 1em;
+            a {
+                color: $base-color;
+                text-decoration: none;
+            }
+        }
+    }
+    section, footer {
+
+    }
+    section {
+        p {
+            @extend %didot;
+            font-size: 22px;
+            line-height: 1.3em;
+            &:first-of-type {
+                margin-top: 0;
+            }
+        }
+    }
+    footer {
+        h3 {
+            @extend %didot;
+            font-style: italic;
+        }
+        p {
+            @extend %abel;
+        }
+    }
+}
+
+/* SECTION: About */
+#about {
+    margin-top: 60px;
+    section {
+        p {
+            font-size: 24px;
+            line-height: 1.3em;
+            em {
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+        }
+    }
+    aside {
+        ul {
+            list-style: none;
+            padding: 0;
+            li {
+                line-height: 1em;
+                margin-bottom: 10px;
+                @extend %abel;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+/* SECTION: Past Speakers */
+#past-speakers {
+    margin-top: 120px;
+    ul {
+        list-style: none;
+        padding: 0;
+        li {
+            @extend %didot;
+            text-transform: uppercase;
+            font-size: 20px;
+            font-style: italic;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            line-height: 1em;
+            span {
+                font-style: normal;
+                text-transform: none;
+                @extend %abel;
+                font-size: 16px;
+                letter-spacing: normal;
+                margin-left: 5px;
+            }
+            a {
+                text-transform: uppercase;
+                text-decoration: none;
+                letter-spacing: 1px;
+            }
+        }
+    }
+}
+
+
+
+/* Footer */
+.footer-container {
+    margin-top: 200px;
+    div.img {
+        display: block;
+        margin: 0 auto;
+        padding: 40px;
+        background: white;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+
+    }
+    p {
+        text-align: center;
+        @extend %abel;
+    }
 }
 
 
@@ -153,7 +398,7 @@ a {
    Media Queries
    ========================================================================== */
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 600px) {
 
 /* ====================
     INTERMEDIATE: Menu
@@ -164,12 +409,39 @@ a {
     INTERMEDIATE: IE Fixes
    ======================== */
 
-    nav ul li {
-        display: inline;
+    #upcoming {
+        aside {
+            width: 30%;
+            float: left;
+        }
+        section, footer {
+            width: 70%;
+            float: right;
+            padding-left: 40px;
+        }
     }
 
-    .oldie nav a {
-        margin: 0 0.7%;
+    #about {
+        margin-top: 60px;
+        section {
+            width: 80%;
+            float: left;
+        }
+        aside {
+            width: 20%;
+            float: right;
+            padding-left: 40px;
+        }
+    }
+
+    #past-speakers {
+        ul {
+            width: 50%;
+            float: left;
+            &:last-of-type {
+                padding-left: 40px;
+            }
+        }
     }
 }
 
@@ -216,7 +488,7 @@ a {
    =============== */
 
     .wrapper {
-        width: 1026px; /* 1140px - 10% for margins */
+        width: 800px; /* 1140px - 10% for margins */
         margin: 0 auto;
     }
 }
