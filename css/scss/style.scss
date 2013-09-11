@@ -113,6 +113,11 @@ a {
     letter-spacing: 2px;
     font-weight: normal;
     text-align: center;
+    margin-bottom: 10px;
+    width: 100%;
+@media screen and (max-width: 400px) {
+    font-size: 40px;
+}
 }
 
 .section-title {
@@ -165,17 +170,19 @@ a.button {
     }
 }
 
-.top-btn {
+/* .top-btn {
     position: fixed;
     bottom: 0;
     left: 0;
-}
+} */
 
 nav {
+    padding: 10px 0;
     ul {
         list-style: none;
         text-align: center;
         padding: 0;
+        margin: 15px 0 5px;
         li {
             display: inline-block;
             padding: 0 25px;
@@ -183,6 +190,10 @@ nav {
             @extend %abel;
             text-transform: uppercase;
             letter-spacing: 2px;
+            @media screen and (max-width: 400px) {
+                padding: 0 10px;
+                font-size: 14px;
+            }
             a {
                 text-decoration: none;
                 color: $base-color;
@@ -190,16 +201,30 @@ nav {
         }
     }
 }
+
+#nav-sticky-wrapper.is-sticky {
+    #nav {
+        background: $bg-color;
+        margin-bottom: 95px;
+        width: 100%;
+        left: 0;
+        z-index: 9999;
+    }
+}
 .hero-image {
     display: block;
-    margin: 0 auto;
+    margin: 40px auto 0;
+    max-width: 90%;
+    height: auto;
 }
 
 /* SECTION: Upcoming */
 #upcoming {
-    margin-top: 80px;
-    padding: 30px 0;
-    background: white;
+    padding-top: 100px;
+    > .bg {
+        padding: 30px 0;
+        background: white;
+    }
     .section-title {
         margin-top: -50px;
     }
@@ -208,16 +233,28 @@ nav {
         font-style: italic;
         @extend %didot;
         font-size: 50px;
+        @media screen and (max-width: 400px) {
+            font-size: 32px;
+        }
         letter-spacing: 2px;
         text-align: center;
         margin-bottom: 5px;
         line-height: 1em;
         + p {
             text-align: center;
+            @extend %abel;
+            margin-top: 0;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
     }
     aside {
-
+        margin-bottom: 40px;
+        &:after {
+            content: "";
+            display: table;
+        }
         .date, .time {
             @extend %abel;
             text-transform: uppercase;
@@ -250,8 +287,10 @@ nav {
     }
     footer {
         h3 {
-            @extend %didot;
-            font-style: italic;
+            @extend %abel;
+            text-transform: uppercase;
+            font-size: 1em;
+            letter-spacing: 1px;
         }
         p {
             @extend %abel;
@@ -261,7 +300,7 @@ nav {
 
 /* SECTION: About */
 #about {
-    margin-top: 60px;
+    padding-top: 100px;
     section {
         p {
             font-size: 24px;
@@ -287,12 +326,18 @@ nav {
                 }
             }
         }
+        h4 {
+            @extend %abel;
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
     }
 }
 
 /* SECTION: Past Speakers */
 #past-speakers {
-    margin-top: 120px;
+    padding-top: 100px;
     ul {
         list-style: none;
         padding: 0;

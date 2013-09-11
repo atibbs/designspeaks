@@ -16,6 +16,9 @@
         <link rel="stylesheet" href="css/fonts.css" type='text/css'>
         <link rel="stylesheet" href="css/style.css" type='text/css'>
 
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
@@ -24,21 +27,26 @@
         <![endif]-->
 
         <div class="header-container">
-            <header class="wrapper clearfix">
-                <h1 class="title">Designspeaks</h1>
-                <nav>
+            <header class="clearfix">
+                <div class="">
+                    <h1 class="title">Designspeaks</h1>
+                </div>
+                <div id="sticky-navigation">
+                <nav id="nav">
                     <ul>
                         <li><a href="#upcoming" class="upcoming-btn">Upcoming</a></li>
                         <li><a href="#about" class="about-btn">About</a></li>
                         <li><a href="#past-speakers" class="past-speakers-btn">Past Speakers</a></li>
                     </ul>
                 </nav>
+                </div>
             </header>
             <img src="img/hero-image.png" alt="Designspeaks presents: We Are the Stories We Tell" class="hero-image" height="388" width="384">
         </div>
 
-        <div id="upcoming" class="clearfix">
-            <h2 class="section-title">Upcoming:</h2>
+        <div id="upcoming">
+            <div class="bg clearfix">
+            <h2 class="section-title">Upcoming</h2>
             <div class="main wrapper">
 
                 <article>
@@ -46,7 +54,7 @@
                         <h1>We Are the Stories We Tell</h1>
                         <p>with Stanley Hainsworth</p>
                     </header>
-                    <aside>
+                    <aside class="clearfix">
                         <p class="date">September 25, 2013</p>
                         <p class="time">7:00 pm</p>
                         <address>
@@ -68,10 +76,11 @@
                 </article>
 
             </div> <!-- .main -->
+            </div>
         </div> <!-- #upcoming -->
 
         <div id="about" class="clearfix">
-            <h2 class="section-title">About Designspeaks:</h2>
+            <h2 class="section-title">About Designspeaks</h2>
             <div class="main wrapper">
 
                 <article>
@@ -91,22 +100,21 @@
         </div> <!-- #about -->
 
         <div id="past-speakers" class="clearfix">
-            <h2 class="section-title">Past Speakers :</h2>
+            <h2 class="section-title">Past Speakers</h2>
             <div class="main wrapper">
 
                 <ul>
-                    <li>First Last <span>position |  <a href="#">video</a></span></li>
-                    <li>First Last <span>position |  <a href="#">video</a></span></li>
-                    <li>First Last <span>position</span></li>
-                    <li>First Last <span>position</span></li>
-                    <li>First Last <span>position</span></li>
+                    <li>Jeff Faulkner <span>|  <a href="https://vimeo.com/64250126">video</a></span></li>
+                    <li>Steve Sandstrom <span>|  <a href="https://vimeo.com/50516704">video</a></span></li>
+                    <li>Patrick Coyne <span>Communications Arts editor</span></li>
+                    <li>Jelly Helm <span>creative director</span></li>
+                    <li>Aaron Draplin <span>designer and entrepreneur</span></li>
                 </ul>
                 <ul>
-                    <li>First Last <span>position</span></li>
-                    <li>First Last <span>position</span></li>
-                    <li>First Last <span>position</span></li>
-                    <li>First Last <span>position</span></li>
-                    <li>First Last <span>position</span></li>
+                    <li>Frank Chimero <span>educator and illustrator</span></li>
+                    <li>Andrea Marks <span>dean of Northwest design</span></li>
+                    <li>Jeff Kovel</li>
+                    <li>Byron Ferris</li>
                 </ul>
 
             </div> <!-- .main -->
@@ -115,25 +123,28 @@
         <div class="footer-container">
             <footer class="wrapper">
                 <div class="img">
-                    <img src="img/ds-icon.png" alt="Designspeaks">
+                    <a href="#" class="top-btn"><img src="img/ds-icon.png" alt="Designspeaks"></a>
                 </div>
                 <p>&copy; 2013</p>
             </footer>
         </div>
-        <a href="#" class="top-btn">Top</a>
+        
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-
+        
+        <!-- Javascripts -->
+        <script type='text/javascript' src='js/jquery.sticky.js'></script>
+        <script type='text/javascript' src='js/jquery.fittext.js'></script>
         <script src="js/main.js"></script>
 
+        <!-- Google Analytics 
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src='//www.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
-
-        <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+    -->
     </body>
 </html>
